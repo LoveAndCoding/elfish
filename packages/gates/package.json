@@ -1,4 +1,5 @@
 {
+  "name": "@elfish/gates",
   "version": "0.0.1",
   "module": "src/index.ts",
   "type": "module",
@@ -8,12 +9,5 @@
   },
   "peerDependencies": {
     "typescript": "catalog:"
-  },
-  "catalog": {
-    "typescript": "^5"
-  },
-  "workspaces": [
-    "packages/*",
-    "!packages/**/test/**"
-  ]
+  }
 }
