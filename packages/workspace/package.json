@@ -1,14 +1,9 @@
 {
-  "name": "@elfish/gates",
+  "name": "@elfish/workspace",
   "version": "0.0.1",
   "module": "src/index.ts",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./src/index.ts",
-    "./js": "./src/js.ts",
-    "./js/*": "./src/js/*.ts"
-  },
   "devDependencies": {
     "@types/bun": "latest"
   },

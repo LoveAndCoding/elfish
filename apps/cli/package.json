@@ -1,9 +1,15 @@
 {
-  "name": "@elfish/data",
+  "name": "elfish",
   "version": "0.0.1",
   "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "bin": {
+    "elfish": "src/index.ts"
+  },
+  "dependencies": {
+    "@elfish/runtime": "workspace:*"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

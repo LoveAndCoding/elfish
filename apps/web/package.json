@@ -1,13 +1,11 @@
 {
-  "name": "@elfish/gates",
+  "name": "@elfish/web",
   "version": "0.0.1",
   "module": "src/index.ts",
   "type": "module",
   "private": true,
-  "exports": {
-    ".": "./src/index.ts",
-    "./js": "./src/js.ts",
-    "./js/*": "./src/js/*.ts"
+  "dependencies": {
+    "@elfish/runtime": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "latest"

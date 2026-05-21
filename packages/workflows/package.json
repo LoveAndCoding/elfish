@@ -4,6 +4,19 @@
   "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./standard": "./src/standard.ts",
+    "./quick-fix": "./src/quick-fix.ts",
+    "./eipc": "./src/eipc.ts",
+    "./doc-update": "./src/doc-update.ts"
+  },
+  "dependencies": {
+    "@elfish/agents": "workspace:*",
+    "@elfish/gates": "workspace:*",
+    "@elfish/hooks": "workspace:*",
+    "@elfish/nodes": "workspace:*"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

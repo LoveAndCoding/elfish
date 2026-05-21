@@ -3,7 +3,70 @@
   "configVersion": 1,
   "workspaces": {
     "": {
+      "name": "@elfish/repo",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "apps/cli": {
       "name": "elfish",
+      "version": "0.0.1",
+      "bin": {
+        "elfish": "src/index.ts",
+      },
+      "dependencies": {
+        "@elfish/runtime": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "apps/web": {
+      "name": "@elfish/web",
+      "version": "0.0.1",
+      "dependencies": {
+        "@elfish/runtime": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/agents": {
+      "name": "@elfish/agents",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/config": {
+      "name": "@elfish/config",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/dispatcher": {
+      "name": "@elfish/dispatcher",
+      "version": "0.0.1",
+      "dependencies": {
+        "@elfish/agents": "workspace:*",
+        "@elfish/workspace": "workspace:*",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -12,12 +75,77 @@
       },
     },
     "packages/gates": {
-      "name": "gates",
+      "name": "@elfish/gates",
+      "version": "0.0.1",
       "devDependencies": {
         "@types/bun": "latest",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "catalog:",
+      },
+    },
+    "packages/hooks": {
+      "name": "@elfish/hooks",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/nodes": {
+      "name": "@elfish/nodes",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/runtime": {
+      "name": "@elfish/runtime",
+      "version": "0.0.1",
+      "dependencies": {
+        "@elfish/config": "workspace:*",
+        "@elfish/dispatcher": "workspace:*",
+        "@elfish/gates": "workspace:*",
+        "@elfish/hooks": "workspace:*",
+        "@elfish/workflows": "workspace:*",
+        "@elfish/workspace": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/workflows": {
+      "name": "@elfish/workflows",
+      "version": "0.0.1",
+      "dependencies": {
+        "@elfish/agents": "workspace:*",
+        "@elfish/gates": "workspace:*",
+        "@elfish/hooks": "workspace:*",
+        "@elfish/nodes": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
+      },
+    },
+    "packages/workspace": {
+      "name": "@elfish/workspace",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "catalog:",
       },
     },
   },
@@ -25,16 +153,36 @@
     "typescript": "^5",
   },
   "packages": {
-    "@types/bun": ["@types/bun@1.3.13", "", { "dependencies": { "bun-types": "1.3.13" } }, "sha512-9fqXWk5YIHGGnUau9TEi+qdlTYDAnOj+xLCmSTwXfAIqXr2x4tytJb43E9uCvt09zJURKXwAtkoH4nLQfzeTXw=="],
+    "@elfish/agents": ["@elfish/agents@workspace:packages/agents"],
 
-    "@types/node": ["@types/node@25.6.2", "", { "dependencies": { "undici-types": "~7.19.0" } }, "sha512-sokuT28dxf9JT5Kady1fsXOvI4HVpjZa95NKT5y9PNTIrs2AsobR4GFAA90ZG8M+nxVRLysCXsVj6eGC7Vbrlw=="],
+    "@elfish/config": ["@elfish/config@workspace:packages/config"],
 
-    "bun-types": ["bun-types@1.3.13", "", { "dependencies": { "@types/node": "*" } }, "sha512-QXKeHLlOLqQX9LgYaHJfzdBaV21T63HhFJnvuRCcjZiaUDpbs5ED1MgxbMra71CsryN/1dAoXuJJJwIv/2drVA=="],
+    "@elfish/dispatcher": ["@elfish/dispatcher@workspace:packages/dispatcher"],
 
-    "gates": ["gates@workspace:packages/gates"],
+    "@elfish/gates": ["@elfish/gates@workspace:packages/gates"],
+
+    "@elfish/hooks": ["@elfish/hooks@workspace:packages/hooks"],
+
+    "@elfish/nodes": ["@elfish/nodes@workspace:packages/nodes"],
+
+    "@elfish/runtime": ["@elfish/runtime@workspace:packages/runtime"],
+
+    "@elfish/web": ["@elfish/web@workspace:apps/web"],
+
+    "@elfish/workflows": ["@elfish/workflows@workspace:packages/workflows"],
+
+    "@elfish/workspace": ["@elfish/workspace@workspace:packages/workspace"],
+
+    "@types/bun": ["@types/bun@1.3.14", "", { "dependencies": { "bun-types": "1.3.14" } }, "sha512-h1hFqFVcvAvD9j9K7ZW7vd82aSA+rTdznZa+5bwvCwqSB1jmmfLcbIWhOLx1/+boy/xmjgCs/OMUL8hRJSmnPw=="],
+
+    "@types/node": ["@types/node@25.8.0", "", { "dependencies": { "undici-types": ">=7.24.0 <7.24.7" } }, "sha512-TCFSk8IZh+iLX1xtksoBVtdmgL+1IX0fC9BeU4QqFSuNdN/K+HUlhqOzEmSYYpZUVsLYcPqc9KX+60iDuninSQ=="],
+
+    "bun-types": ["bun-types@1.3.14", "", { "dependencies": { "@types/node": "*" } }, "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ=="],
+
+    "elfish": ["elfish@workspace:apps/cli"],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
-    "undici-types": ["undici-types@7.19.2", "", {}, "sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg=="],
+    "undici-types": ["undici-types@7.24.6", "", {}, "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg=="],
   }
 }

@@ -1,11 +1,15 @@
 {
-  "name": "@elfish/dispatcher",
+  "name": "@elfish/runtime",
   "version": "0.0.1",
   "module": "src/index.ts",
   "type": "module",
   "private": true,
   "dependencies": {
-    "@elfish/agents": "workspace:*",
+    "@elfish/config": "workspace:*",
+    "@elfish/dispatcher": "workspace:*",
+    "@elfish/gates": "workspace:*",
+    "@elfish/hooks": "workspace:*",
+    "@elfish/workflows": "workspace:*",
     "@elfish/workspace": "workspace:*"
   },
   "devDependencies": {
