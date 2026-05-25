@@ -86,9 +86,11 @@
       "name": "@elfish/nodes",
       "version": "0.0.1",
       "dependencies": {
+        "@elfish/dispatcher": "workspace:*",
         "@elfish/types": "workspace:*",
       },
       "devDependencies": {
+        "@elfish/workspace": "workspace:*",
         "@types/bun": "catalog:",
       },
       "peerDependencies": {
@@ -141,6 +143,9 @@
     "packages/workspace": {
       "name": "@elfish/workspace",
       "version": "0.0.1",
+      "dependencies": {
+        "@elfish/types": "workspace:*",
+      },
       "devDependencies": {
         "@types/bun": "catalog:",
       },

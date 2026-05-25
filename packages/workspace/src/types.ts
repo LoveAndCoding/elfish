@@ -1,12 +1,6 @@
-export type JsonValue =
-  | null
-  | boolean
-  | number
-  | string
-  | JsonValue[]
-  | { [key: string]: JsonValue };
+import type { JsonObject, JsonValue } from "@elfish/types/json";
 
-export type JsonObject = { [key: string]: JsonValue };
+export type { JsonObject, JsonValue };
 
 export type WorkspaceStatus =
   | "created"

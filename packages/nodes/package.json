@@ -7,12 +7,14 @@
     ".": "./src/index.ts"
   },
   "devDependencies": {
-    "@types/bun": "catalog:"
+    "@types/bun": "catalog:",
+    "@elfish/workspace": "workspace:*"
   },
   "peerDependencies": {
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@elfish/types": "workspace:*"
+    "@elfish/types": "workspace:*",
+    "@elfish/dispatcher": "workspace:*"
   }
 }

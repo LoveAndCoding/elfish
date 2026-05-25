@@ -6,6 +6,9 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "dependencies": {
+    "@elfish/types": "workspace:*"
+  },
   "devDependencies": {
     "@types/bun": "catalog:"
   },
