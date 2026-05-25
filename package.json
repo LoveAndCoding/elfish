@@ -5,7 +5,8 @@
     ".": "./src/index.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "typescript": "catalog:"
@@ -28,6 +29,8 @@
   },
   "scripts": {
     "format": "prettier --write \"{apps,packages,docs}/**/*.{ts,tsx,js,jsx,json,md}\"",
-    "format:check": "prettier --check \"{apps,packages,docs}/**/*.{ts,tsx,js,jsx,json,md}\""
+    "format:check": "prettier --check \"{apps,packages,docs}/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
   }
 }
