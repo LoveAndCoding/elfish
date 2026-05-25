@@ -13,7 +13,7 @@
     "@elfish/runtime": "workspace:*"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "catalog:"
   },
   "peerDependencies": {
     "typescript": "catalog:"
