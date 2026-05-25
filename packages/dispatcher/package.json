@@ -1,11 +1,13 @@
 {
   "name": "@elfish/dispatcher",
   "version": "0.0.1",
-  "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "dependencies": {
-    "@elfish/agents": "workspace:*",
+    "@elfish/types": "workspace:*",
     "@elfish/workspace": "workspace:*"
   },
   "devDependencies": {

@@ -1,9 +1,11 @@
 {
   "name": "elfish",
   "version": "0.0.1",
-  "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "bin": {
     "elfish": "src/index.ts"
   },
