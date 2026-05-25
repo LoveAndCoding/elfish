@@ -34,7 +34,6 @@ Projects can use, adapt, or compose these workflows. The package describes how w
 - `@elfish/nodes`.
 - `@elfish/gates`.
 - `@elfish/hooks`.
-- `@elfish/agents` capability contracts.
 
 ## Notes
 

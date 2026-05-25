@@ -45,4 +45,4 @@ It is the shared programmatic surface used by `apps/cli` and `apps/web` to start
 
 ## Notes
 
-The runtime should stay focused on execution coordination. Config validation should use `@elfish/config`; agent execution should flow through `@elfish/dispatcher`; concrete integrations belong behind `@elfish/agents`.
+The runtime should stay focused on execution coordination. Config validation should use `@elfish/config`; command execution should flow through `@elfish/dispatcher`.
