@@ -7,7 +7,6 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@elfish/types": "workspace:*",
     "@elfish/workspace": "workspace:*"
   },
   "devDependencies": {
