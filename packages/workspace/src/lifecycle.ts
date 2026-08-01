@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 
 import { WorkspaceError, workspaceErrorFromCause } from "./errors";
 import { pathExists, writeJsonFile } from "./fs";
+import { removeGitWorktree } from "./git";
 import {
   handleFromMetadata,
   validateWorkspaceId,
@@ -14,7 +15,6 @@ import {
   readWorkspaceMetadata,
   writeOwnedMetadata,
 } from "./metadata";
-import { removeGitWorktree } from "./git";
 import type {
   CreateWorkspaceOptions,
   GitWorktreeSourceMetadata,

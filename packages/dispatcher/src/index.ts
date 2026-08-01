@@ -1,11 +1,11 @@
 export { DispatcherError } from "./errors";
 export type {
   Command,
+  DispatcherErrorCode,
+  DispatcherErrorSummary,
   DispatchRequest,
   DispatchResult,
   DispatchTerminationReason,
-  DispatcherErrorCode,
-  DispatcherErrorSummary,
   ExecutedCommand,
 } from "./types";
 

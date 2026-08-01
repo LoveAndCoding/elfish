@@ -119,10 +119,8 @@ export interface StandardJSONSchemaV1<Input = unknown, Output = Input> {
 
 export declare namespace StandardJSONSchemaV1 {
   /** The Standard JSON Schema properties interface. */
-  export interface Props<
-    Input = unknown,
-    Output = Input,
-  > extends StandardTypedV1.Props<Input, Output> {
+  export interface Props<Input = unknown, Output = Input>
+    extends StandardTypedV1.Props<Input, Output> {
     /** Methods for generating the input/output JSON Schema. */
     readonly jsonSchema: StandardJSONSchemaV1.Converter;
   }
@@ -163,10 +161,8 @@ export declare namespace StandardJSONSchemaV1 {
   }
 
   /** The Standard types interface. */
-  export interface Types<
-    Input = unknown,
-    Output = Input,
-  > extends StandardTypedV1.Types<Input, Output> {}
+  export interface Types<Input = unknown, Output = Input>
+    extends StandardTypedV1.Types<Input, Output> {}
 
   /** Infers the input type of a Standard. */
   export type InferInput<Schema extends StandardTypedV1> =

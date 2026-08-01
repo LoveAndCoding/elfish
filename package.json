@@ -5,8 +5,8 @@
     ".": "./src/index.ts"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.6",
     "@types/bun": "catalog:",
-    "prettier": "^3.8.3",
     "typescript": "catalog:"
   },
   "private": true,
@@ -22,8 +22,10 @@
     }
   },
   "scripts": {
-    "format": "prettier --write \"{apps,packages,docs}/**/*.{ts,tsx,js,jsx,json,md}\"",
-    "format:check": "prettier --check \"{apps,packages,docs}/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   }
