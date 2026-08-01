@@ -2,16 +2,15 @@ import { afterEach, describe, expect, test } from "bun:test";
 import { chmod, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-
-import { DispatcherError, dispatch, type DispatcherErrorCode } from "./index";
-import { normalizeDispatchRequest } from "./normalize";
-import { bunProcessRunner } from "./runner";
+import type { WorkspaceErrorCode } from "@elfish/workspace";
 import {
-  WorkspaceError,
   copySource,
   prepareWorkspace,
+  WorkspaceError,
 } from "@elfish/workspace";
-import type { WorkspaceErrorCode } from "@elfish/workspace";
+import { DispatcherError, type DispatcherErrorCode, dispatch } from "./index";
+import { normalizeDispatchRequest } from "./normalize";
+import { bunProcessRunner } from "./runner";
 
 const tempRoots: string[] = [];
 

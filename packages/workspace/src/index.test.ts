@@ -3,30 +3,29 @@ import {
   lstat,
   mkdir,
   mkdtemp,
-  readFile,
   readdir,
+  readFile,
   rm,
   stat,
   symlink,
   writeFile,
 } from "node:fs/promises";
-import { join } from "node:path";
 import { tmpdir } from "node:os";
-
+import { join } from "node:path";
+import type { WorkspaceErrorCode } from "./index";
 import {
-  WorkspaceError,
   cleanupWorkspace,
-  createWorkspace,
   copySource,
+  createWorkspace,
   gitWorktreeSource,
   prepareWorkspace,
   prepareWorkspaceSource,
   readWorkspaceMetadata,
   resolveWorkspacePath,
   resolveWorkspaceRelativePath,
+  WorkspaceError,
   writeWorkspaceMetadata,
 } from "./index";
-import type { WorkspaceErrorCode } from "./index";
 
 const tempRoots: string[] = [];
 const gitTest = (await gitAvailable()) ? test : test.skip;
